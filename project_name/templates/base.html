@@ -1,0 +1,56 @@
+{% load compress %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>{% block title%}{% endblock %}</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="{% block description %}{% endblock %}">
+<meta name="author" content="{% block author %}{% endblock %}">
+
+{% block styles %}
+{% compress css %}
+<link href="{{STATIC_URL}}lib/bootstrap/css/bootstrap.css" rel="stylesheet">
+<link href="{{STATIC_URL}}lib/bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
+<link href="{{STATIC_URL}}lib/css/select2.css" rel="stylesheet">
+<link href="{{STATIC_URL}}css/style.css" rel="stylesheet">
+{% endcompress %}
+{% endblock %}
+<!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+</head>
+<body>
+    <div class="header"></div>
+    <div class="container">
+        <div class="row-fluid">
+            <div id="content" class="span12>"></div>
+        </div>
+    </div>
+    <footer class="footer">
+        {% block footer %}{% endblock %}
+    </footer>
+</div>
+
+{% block basejs %}
+{% compress js %}
+<script src="{{STATIC_URL}}lib/js/jquery.min.js"></script>
+<script src="{{STATIC_URL}}lib/js/underscore-min.js"></script>
+<script src="{{STATIC_URL}}lib/js/underscore.string.min.js"></script>
+<script type="text/javascript"> _.mixin(_.str.exports()); </script>
+<script src="{{STATIC_URL}}lib/bootstrap/js/bootstrap.min.js"></script>
+<script src="{{STATIC_URL}}lib/js/backbone-min.js"></script>
+<script src="{{STATIC_URL}}lib/js/backbone.bootstrap-modal.js"></script>
+<script src="{{STATIC_URL}}lib/js/moment.min.js"></script>
+<script src="{{STATIC_URL}}lib/js/session.min.js"></script>
+<script src="{{STATIC_URL}}lib/js/select2.min.js"></script>
+<script src="{{STATIC_URL}}lib/js/swig.min.js"></script>
+<script type="text/coffeescript" src="{{STATIC_URL}}coffee/utils.coffee"></script>
+{% endcompress %}
+{% endblock %}
+
+{% block extrajs %}
+{% endblock %}
+</body>
+</html>
