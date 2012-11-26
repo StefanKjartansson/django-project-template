@@ -1,5 +1,5 @@
 VROOT = '/home/vagrant'
-PROJECT_NAME = File.expand_path(File.dirname(__FILE__)).split('/')[-1]
+PROJECT_NAME = '{{ project_name }}'
 
 Vagrant::Config.run do |config|
 

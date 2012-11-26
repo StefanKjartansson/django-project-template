@@ -8,7 +8,7 @@ from .paths import root_path, APPNAME
 
 
 ADMINS = (
-    ('Stefán Kjartansson', 'esteban.supreme@gmail.com'),
+    ('Stefan Kjartansson', 'esteban.supreme@gmail.com'),
 )
 
 MANAGERS = ADMINS
